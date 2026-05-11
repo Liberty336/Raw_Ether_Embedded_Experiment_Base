@@ -1,0 +1,8 @@
+[workspace]
+members = ["common", "sender", "receiver"]
+
+# resolver = "1" is legacy, don't use in new projects
+
+# resolver = "2" makes features context-dependent. Each crate gets exactly the features it asked for
+resolver = "2" # modern, use this always
+

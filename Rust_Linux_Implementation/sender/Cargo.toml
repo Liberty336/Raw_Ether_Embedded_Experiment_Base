@@ -1,0 +1,8 @@
+[package]
+name = "sender"   # or "receiver"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+common = { path = "/home/gnunix/tools/Custom_Protocol/raw-ether_rust_implementation/common/" }
+libc = "0.2"

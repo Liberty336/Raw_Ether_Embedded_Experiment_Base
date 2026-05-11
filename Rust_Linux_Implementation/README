@@ -1,0 +1,8 @@
+# Build everything in the workspace
+cargo build
+
+# Run receiver (interface via env var instead of compile flag)
+sudo INTERFACE=wlp2s0 ./target/debug/receiver
+
+# Run sender (same CLI as the C version)
+sudo ./target/debug/sender wlp2s0 AA:BB:CC:DD:EE:FF "hello world"
