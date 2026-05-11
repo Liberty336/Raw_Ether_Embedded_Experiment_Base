@@ -1,4 +1,4 @@
-# Raw_Ether_Embedded_Experiment_Base
+# Custom_Protocol_Experimental_Base
 <img width="766" height="589" alt="image" src="https://github.com/user-attachments/assets/acff0e92-f37b-49f4-a771-cab882232c4f" />
 
 Liberty336 wanted its own custom experimental protocol.<br>
