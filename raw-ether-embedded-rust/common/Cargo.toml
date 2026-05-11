@@ -1,0 +1,9 @@
+[package]
+name    = "common"
+version = "0.1.0"
+edition = "2021"
+
+# No dependencies at all, pure core Rust.
+# This is the ideal no_std library: zero cost, zero overhead, works anywhere.
+[dependencies]
+# None, we're embedded, lol

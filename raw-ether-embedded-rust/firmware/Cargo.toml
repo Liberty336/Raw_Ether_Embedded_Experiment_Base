@@ -1,0 +1,29 @@
+[package]
+name    = "firmware"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+common      = { path = "../common" }
+
+# cortex-m: CPU-level primitives (NOP, WFI, interrupt enable/disable)
+cortex-m    = "0.7"
+
+# cortex-m-rt: minimal runtime — sets up stack pointer, zeroes BSS,
+# copies .data from flash to RAM, then calls main().
+# Provides the #[entry] attribute that replaces fn main().
+cortex-m-rt = "0.7"
+
+# panic-halt: the simplest possible panic handler — on panic, disable
+# interrupts and loop forever. Equivalent to while(1){} in C.
+# Other options: panic-semihosting (prints to debugger), panic-itm, panic-rtt.
+panic-halt  = "0.2"
+
+# ── Release profile: optimise hard for size ───────────────────────────────────
+# These are the embedded-specific flags discussed earlier.
+[profile.release]
+opt-level      = "z"    # optimise for size, not speed
+lto            = true   # link-time optimisation — remove dead code across crates
+codegen-units  = 1      # single codegen unit — slower compile, better LTO
+panic          = "abort" # no unwinding machinery — saves ~20 KB on Cortex-M
+strip          = false  # keep debug symbols (you want these for GDB/probe-rs)
